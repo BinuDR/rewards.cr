@@ -32,9 +32,10 @@ module Rewards
       break if game.closed?
       next if from_game.nil? || from_game.strip.empty?
       break if from_game =~ /Thank you for logging into Dragonrealms/
-      break if from_game =~ /^<prompt/
+      break if from_game =~ /Current login streak/
+      game << "boost\n" if from_game =~ /^<prompt/
     end
     server.close
-    puts "%s> logged in" % [character.ljust(15)]
+    puts "%s> logged in - #{from_game}" % [character.ljust(15)]
   end
 end
