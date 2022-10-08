@@ -31,7 +31,7 @@ module Rewards
     while from_game = game.gets
       break if game.closed?
       next if from_game.nil? || from_game.strip.empty?
-      break if from_game =~ /Thank you for logging into GemStone IV!/
+      break if from_game =~ /Thank you for logging into Dragonrealms/
       break if from_game =~ /^<prompt/
     end
     server.close
