@@ -124,7 +124,7 @@ module EAccess
   end
 
   def self.get_sub(sock : TCPSocket)
-    code = ENV.fetch("GAME_CODE", "GS3")
+    code = ENV.fetch("GAME_CODE", "DR")
     f, g, p = "FGP".chars.map do |c|
       sock << c + "\t%s\n" % code
       get_tsv(sock)
