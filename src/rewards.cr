@@ -33,6 +33,7 @@ module Rewards
       next if from_game.nil? || from_game.strip.empty?
       break if from_game =~ /\[You are dead.\]/
       break if from_game =~ /You are a ghost!/
+      break if from_game =~ /\[A Junk Yard\]/
       break if from_game =~ /Thank you for logging into DragonRealms/
       break if from_game =~ /Current login streak/
       game << "boost\n" if from_game =~ /^<prompt/
