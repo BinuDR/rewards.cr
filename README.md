@@ -14,6 +14,10 @@ Setting up lich on a ci service is really annoying and brittle with a lot of ove
 
 download the latest release binary from the [releases tab](https://github.com/ondreian/rewards.cr/releases)
 
+## Compiling your own binary
+
+crystal build ./src/cli.cr -o rewards --release
+
 ## Usage
 
 the `rewards` tool expects a csv with the columns in the form of `account,password`
